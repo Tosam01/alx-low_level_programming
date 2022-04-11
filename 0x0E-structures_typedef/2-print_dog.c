@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * print_dog - prints a struct dog
- * @d: struct dog
+ * print_dog - prints a struct dog.
+ * @d: struct dog.
  *
- * Return: no return
+ * Return: no return.
  */
 void print_dog(struct dog *d)
 {
@@ -15,7 +15,7 @@ void print_dog(struct dog *d)
 			printf("Name: (nil)\n");
 		else
 			printf("Name: %s\n", d->name);
-		
+
 		printf("Age: %f\n", d->age);
 
 		if (!(d->owner))

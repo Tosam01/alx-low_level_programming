@@ -10,27 +10,27 @@
  *    * @next: points to the next node
  *     *
  *      * Description: singly linked list node structure
- *       * 
- *        */
+ */
 typedef struct listint_s
 {
-	    int n;
-	    struct listint_s *next;
+	int n;
+	struct listint_s *next;
 } listint_t;
 
 /**
- * struct listp_s - singly linked list
- * @p: pointers of nodes
+ * struct listptr_s - singly linked list
+ * @p: pointer
  * @next: points to the next node
  *
- * Description: singly linked list of pointers
+ * Description: singly linked list node structure
  */
-typedef struct listp_s
+typedef struct listptr_s
 {
-	void *p;
-	struct listp_s *next;
-} listp_t;
+	const listint_t *p;
+	struct listptr_s *next;
+} listptr_t;
 
+int _putchar(char c);
 size_t print_listint(const listint_t *h);
 size_t listint_len(const listint_t *h);
 listint_t *add_nodeint(listint_t **head, const int n);
@@ -46,5 +46,11 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
+listint_t *_find_listint_loop(listint_t *head, listint_t **link);
+int is_linked(const listint_t *head, const listint_t *node);
 
-#endif
+listptr_t *add_nodeptr(listptr_t **head, const listint_t *p);
+int listptr_contains(const listptr_t *head, const listint_t *p);
+void free_listptr(listptr_t *head);
+
+#endif /* LISTS_H */
